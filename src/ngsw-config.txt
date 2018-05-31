@@ -1,0 +1,81 @@
+{
+  "index": "/index.html", 
+  //punto de entrada de la app
+  "assetGroups": [{ // define como vana ser cacheado los assets
+    "name": "app",
+    "installMode": "prefetch",  //prefech que va a cachear los primero y necesario para modo ofline
+    // aqui mete todo la parte de codigoprinciapl de la app
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "versionedFiles": [
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ]
+      // Podemos añadir ademas recursops externos que queremos que se guarden en cache como los google icons
+      /*
+      "url" : [
+        "hhtps://fonts.googelapis.com/css?family=MAterial+icins
+      ]
+
+
+      */
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",  
+    // Otro grupo de assets los haremos chaceh en modo lazy lo cual significa que solo se cachearan
+    //cuando elusaurio las consuma
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }]
+  /*
+
+    api-freshness - This freshness strategy will attempt 
+    to serve data from the network first, then fallback to th cache.
+     You can set a maxAge property that defines how long to cache 
+     responses and a timeout that defines how long to wait before falling back to the cache. 
+  
+     "dataGroups": [{
+      "name": "api-freshness",
+      "urls": [
+        "/new"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }, {
+      
+      api-performance - The performance cache will serve data from the cache first and only reach out to the network if the cache is expired.
+
+      "name": "api-performance",
+      "urls": [
+        "/",
+        "/jobs",
+        "/show",
+        "/ask"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1d",
+        "strategy": "performance"
+      }
+    }]
+
+
+
+
+
+
+  */
+}

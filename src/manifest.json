@@ -1,0 +1,16 @@
+{
+    "short_name": "NG-Mlg PWA",
+    "name": "Angular Málaga PWA",
+    "start_url": "/",
+    "theme_color": "#cd0025",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/assets/icons/pwa-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

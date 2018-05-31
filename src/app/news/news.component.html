@@ -1,0 +1,5 @@
+<div style="text-align:center">
+  <img width="300" alt="Angular Logo" src="assets/icons/pwa-icon.png" [ngClass]="(buttonClicked) ? 'spin' : 'default'">
+  <br>
+  <button mat-raised-button color="accent" (click)="buttonClicked  =! buttonClicked">{{!buttonClicked ? ' Play' : 'Pause'}}</button>
+</div>
